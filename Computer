@@ -1,0 +1,123 @@
+
+package s220295565mywsu.ac.za;
+
+/**
+ * @author sendron21Juqula
+ *
+ */
+public class Computer {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		 String name;
+new ComputerApp();
+try {
+for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+if ("Comp".equals(info.getName())) {
+javax.swing.UIManager.setLookAndFeel(info.getClassName());
+break;
+}
+}
+} catch (ClassNotFoundException ex) {
+java.util.logging.Logger.getLogger(ComputerApp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+ex);
+} catch (InstantiationException ex) {
+java.util.logging.Logger.getLogger(ComputerApp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+ex);
+} catch (IllegalAccessException ex) {
+java.util.logging.Logger.getLogger(ComputerApp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+ex);
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+java.util.logging.Logger.getLogger(ComputerApp.class.getName()).log(java.util.logging.Level.SEVERE, null,
+ex);
+}
+
+	
+	}}/**
+ * 
+ */
+package s220295565mywsu.ac.za;
+
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+/**
+ * @author sendron21Juqula
+ *
+ */
+@SuppressWarnings("serial")
+public class ComputerApp extends JFrame implements ActionListener {
+	private JFrame f = new JFrame();
+	private JLabel lblC = new JLabel("");
+	
+	private JLabel lblIP = new JLabel("IP adress");
+	private JTextField txtIP = new JTextField(10);
+	private JLabel lblV = new JLabel("Value");
+	private JTextField txtV = new JTextField(10);
+	
+	private JButton btnConca = new JButton("+"); 
+	private JButton btnShowC = new JButton("show computer");
+	private JButton btnClear = new JButton("Clear ");
+	private JButton btnExit = new JButton("Exit App ");
+	public  ComputerApp(){
+	
+	//constructor
+	
+	    super("lab app");
+		lblC.setText("Computer");
+		Font font = new Font("Tahama", Font.ITALIC,10);
+		lblC.setFont(font);
+		setLayout(new GridLayout( 5,2,5,5));
+		setDefaultCloseOperation(3);
+		add(lblC);
+		add(lblIP);
+		add(txtIP);
+		add(lblV);	
+		add(txtV);
+		add(btnConca);
+		add(btnShowC);
+		add(btnClear);
+		add(btnExit);
+		pack();
+		f.setSize(300,400);
+		setLayout(new GridLayout(5,2,5,5));
+		btnConca.addActionListener(this);
+		btnShowC.addActionListener(this);
+		btnClear.addActionListener(this);
+		btnExit.addActionListener(this);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		
+		Object source =e.getSource();
+		if(source==btnShowC)
+			JOptionPane.showMessageDialog(null, "computers  ","Computers", 0);
+		if(source==btnConca)
+			JOptionPane.showMessageDialog(null,"no computer inserted!");
+		else
+		JOptionPane.showMessageDialog(null,"Computer is inserted");
+		if(source==btnExit)
+			System.exit(0);
+		
+		if(source==btnClear)
+			txtIP.setText("");
+		    txtV.setText("");
+	
+	
+	
+	}
+	}
